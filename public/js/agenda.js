@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  let formulario = document.querySelector("form");
+  let formulario = document.getElementById("formEvento"); // change querySelector to getElementById for problems with other form logout
 
   var calendarEl = document.getElementById('agenda');
 
@@ -26,10 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const datos = new FormData(formulario);
 
     console.log(datos);
-
-    console.log(formulario)
-
-    console.log(formulario._token.value)
 
   });
 
