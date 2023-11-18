@@ -22,10 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   calendar.render();
 
-  document.getElementById("btnGuardar").addEventListener("click", function() {
+  document.getElementById('btnGuardar').addEventListener("click", function() {
     const datos = new FormData(formulario);
 
     console.log(datos);
+
+    console.log(formulario)
+
+    console.log(formulario._token.value)
 
   });
 

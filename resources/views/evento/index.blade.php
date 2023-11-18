@@ -16,7 +16,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agenda</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -35,9 +35,9 @@
                         </div>
 
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" name="descripcion" placeholder="Descripción del evento" id="description"
+                            <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Descripción del evento" id="description"
                                 style="height: 100px"></textarea>
-                            <label for="description">Descripción</label>
+                            <label for="descripcion">Descripción</label>
                         </div>
 
                         <div class="form-floating mb-3">
