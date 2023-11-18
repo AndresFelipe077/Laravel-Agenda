@@ -22,6 +22,8 @@
                 <div class="modal-body">
                     <form id="formEvento" action="">
 
+                        {!! csrf_field() !!}
+
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="id" name="id"
                                 placeholder="Id del evento">

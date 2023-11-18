@@ -27,6 +27,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log(datos);
 
+    axios.post("http://127.0.0.1:8000/evento", datos).
+      then(
+        (respuesta) => {
+          $("#evento").modal("hide");
+        }
+      ).catch(
+        error => {
+          if(error.response) {
+            console.log(error.response.data);
+          }
+        }
+      )
+
   });
 
 });

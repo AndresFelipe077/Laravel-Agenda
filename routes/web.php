@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/evento', [EventoController::class, 'index']);
+Route::resource('evento', EventoController::class);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
