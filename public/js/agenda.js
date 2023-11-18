@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     eventClick: function(info){
 
       var evento = info.event;
-      console.log(evento);
 
       axios.post('http://127.0.0.1:8000/eventos/edit/' + info.event.id).
       then(
@@ -60,6 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('btnGuardar').addEventListener("click", function() {
     sendData("http://127.0.0.1:8000/eventos");
+  });
+
+  document.getElementById('btnModificar').addEventListener("click", function() {
+    
+    sendData("http://127.0.0.1:8000/eventos/update/" + formulario.id.value);
+
   });
 
   document.getElementById('btnEliminar').addEventListener("click", function() {
