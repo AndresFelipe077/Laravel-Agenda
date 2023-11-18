@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
     events: "http://127.0.0.1:8000/eventos/mostrar",
 
     dateClick: function (info) { // show modal
+
+      formulario.reset();
+
+      formulario.start.value = info.dateStr
+      formulario.end.value   = info.dateStr
+
       $("#evento").modal("show");
     }
 
@@ -32,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     axios.post("http://127.0.0.1:8000/eventos", datos).
       then(
         (respuesta) => {
+          calendar.refetchEvents();
           $("#evento").modal("hide");
         }
       ).catch(
