@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var evento = info.event;
 
-      axios.post('http://127.0.0.1:8000/eventos/edit/' + info.event.id).
+      axios.post(baseURL + '/eventos/edit/' + info.event.id).
       then(
         (respuesta) => {
 
