@@ -22,8 +22,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/eventos', EventoController::class)->only(['index', 'store', 'edit']);
+Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
 
 Route::get('/eventos/mostrar', [EventoController::class, 'show']);
+
+Route::post('/eventos/edit/{id}', [EventoController::class, 'edit']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
