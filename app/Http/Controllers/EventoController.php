@@ -33,11 +33,15 @@ class EventoController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get all data of events
+     *
+     * @param Evento $evento
+     * @return void
      */
     public function show(Evento $evento)
     {
-        //
+        $evento = Evento::all();
+        return response()->json($evento);
     }
 
     /**

@@ -44,7 +44,7 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/evento') }}">
+                <a class="navbar-brand" href="{{ url('/eventos') }}">
                     Eventos - calendario
                 </a>
 

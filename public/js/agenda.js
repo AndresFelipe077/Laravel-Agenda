@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
 
+    events: "http://127.0.0.1:8000/eventos/mostrar",
+
     dateClick: function (info) { // show modal
       $("#evento").modal("show");
     }
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log(datos);
 
-    axios.post("http://127.0.0.1:8000/evento", datos).
+    axios.post("http://127.0.0.1:8000/eventos", datos).
       then(
         (respuesta) => {
           $("#evento").modal("hide");
