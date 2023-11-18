@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
       formulario.end.value   = info.dateStr
 
       $("#evento").modal("show");
+    },
+    eventClick: function(info){
+      var evento = info.event;
+      console.log(evento);
     }
 
   });

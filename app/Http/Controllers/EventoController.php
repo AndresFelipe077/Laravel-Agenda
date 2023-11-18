@@ -47,9 +47,10 @@ class EventoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Evento $evento)
+    public function edit($id)
     {
-        //
+        $evento = Evento::find($id);
+        return response()->json($evento, 200);
     }
 
     /**

@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
+Route::resource('/eventos', EventoController::class)->only(['index', 'store', 'edit']);
 
 Route::get('/eventos/mostrar', [EventoController::class, 'show']);
 
