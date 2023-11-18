@@ -17,19 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('evento.index');
+})->middleware("auth");
 
 Auth::routes();
 
-Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/eventos/mostrar', [EventoController::class, 'show']);
+    Route::resource('/eventos', EventoController::class)->only(['index', 'store']);
 
-Route::post('/eventos/edit/{id}', [EventoController::class, 'edit']);
+    Route::post('/eventos/mostrar', [EventoController::class, 'show']);
 
-Route::post('/eventos/update/{evento}', [EventoController::class, 'update']);
+    Route::post('/eventos/edit/{id}', [EventoController::class, 'edit']);
 
-Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
+    Route::post('/eventos/update/{evento}', [EventoController::class, 'update']);
+
+    Route::post('/eventos/eliminar/{id}', [EventoController::class, 'destroy']);
+});
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

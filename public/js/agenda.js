@@ -7,14 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
     locale: "es",
-
+    displayEventTime: false,
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,listWeek'
+      right: 'dayGridMonth', // 'dayGridMonth,timeGridWeek,listWeek', // si queres le colocas todo esto que hace referencia al mes, semana y hoy
     },
 
-    events: baseURL + "/eventos/mostrar",
+    // events: baseURL + "/eventos/mostrar",
+
+    eventSources: {
+      url: baseURL + "/eventos/mostrar",
+      method: "POST",
+      extraParams: {
+        _token: formulario._token.value,
+      }
+    },
 
     dateClick: function (info) { // show modal
 

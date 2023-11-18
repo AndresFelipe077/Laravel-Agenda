@@ -1,15 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div id="agenda">
-            calendario
-        </div>
+        <div id="agenda"></div>
     </div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#evento">
-        Launch demo modal
-    </button>
 
     <!-- Modal -->
     <div class="modal fade" id="evento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -24,7 +17,7 @@
 
                         {!! csrf_field() !!}
 
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-3 d-none">
                             <input type="text" class="form-control" id="id" name="id"
                                 placeholder="Id del evento">
                             <label for="id">Id</label>
@@ -58,10 +51,10 @@
                 </div>
                 <div class="modal-footer">
 
-                  <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button> 
-                  <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button> 
-                  <button type="button" class="btn btn-danger"  id="btnEliminar">Eliminar</button> 
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
+                    <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
+                    <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                 </div>
             </div>
