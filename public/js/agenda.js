@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
 
-    events: "http://127.0.0.1:8000/eventos/mostrar",
+    events: baseURL + "/eventos/mostrar",
 
     dateClick: function (info) { // show modal
 
@@ -58,18 +58,18 @@ document.addEventListener('DOMContentLoaded', function () {
   calendar.render();
 
   document.getElementById('btnGuardar').addEventListener("click", function() {
-    sendData("http://127.0.0.1:8000/eventos");
+    sendData("/eventos");
   });
 
   document.getElementById('btnModificar').addEventListener("click", function() {
     
-    sendData("http://127.0.0.1:8000/eventos/update/" + formulario.id.value);
+    sendData("/eventos/update/" + formulario.id.value);
 
   });
 
   document.getElementById('btnEliminar').addEventListener("click", function() {
     
-    sendData("http://127.0.0.1:8000/eventos/eliminar/" + formulario.id.value);
+    sendData("/eventos/eliminar/" + formulario.id.value);
 
   });
 
@@ -78,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const datos = new FormData(formulario);
 
-    axios.post(url, datos).
+    const newURL = baseURL + url;
+
+    axios.post(newURL, datos).
       then(
         (respuesta) => {
           calendar.refetchEvents();
