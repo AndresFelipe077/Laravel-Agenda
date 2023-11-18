@@ -59,11 +59,21 @@ document.addEventListener('DOMContentLoaded', function () {
   calendar.render();
 
   document.getElementById('btnGuardar').addEventListener("click", function() {
+    sendData("http://127.0.0.1:8000/eventos");
+  });
+
+  document.getElementById('btnEliminar').addEventListener("click", function() {
+    
+    sendData("http://127.0.0.1:8000/eventos/eliminar/" + formulario.id.value);
+
+  });
+
+
+  function sendData(url) {
+
     const datos = new FormData(formulario);
 
-    console.log(datos);
-
-    axios.post("http://127.0.0.1:8000/eventos", datos).
+    axios.post(url, datos).
       then(
         (respuesta) => {
           calendar.refetchEvents();
@@ -77,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       )
 
-  });
+  }
+
 
 });
